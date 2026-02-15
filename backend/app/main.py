@@ -1,11 +1,21 @@
 from fastapi import FastAPI
-from .settings import Settings
+
+from .api.main import api_router
+
+from .core.config import settings
+
 
 app = FastAPI(
-    title=Settings.NAME,
-    description=Settings.DESCRIPTION,
+    title=settings.PROJECT_NAME,
+    description=settings.PROJECT_DESCRIPTION,
+
+    # Docs
+    docs_url=f"{settings.API_V1_STR}/docs",
+    redoc_url=f"{settings.API_V1_STR}/redoc",
+    openapi_url=f"{settings.API_V1_STR}/openapi.json",
 )
 
-@app.get("/")
-def root():
-    return {"message": "Welcome to the Bank API"}
+app.include_router(
+    api_router,
+    prefix=settings.API_V1_STR,
+)

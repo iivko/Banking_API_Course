@@ -9,6 +9,10 @@
 # For Mac users
 .DS_Store
 
+# envs
+.envs/*
+!.envs/.env.example
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
