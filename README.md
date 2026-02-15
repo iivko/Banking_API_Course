@@ -16,3 +16,9 @@ The course covers practical aspects of transaction processing, fraud detection u
 - Flower for monitoring
 - Gunicorn for web HTTP server
 - Uvicorn for ASGI server
+
+
+To run the project:
+```
+uv>=0.10.2
+```
