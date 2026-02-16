@@ -7,6 +7,8 @@ from typing import Literal
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
+print(BASE_DIR)
+
 class Settings(BaseSettings):
     ENVIRONMENT: Literal["local", "staging", "production"] = "local"
 
