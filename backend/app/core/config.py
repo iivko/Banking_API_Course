@@ -25,5 +25,7 @@ class Settings(BaseSettings):
 
     SITE_NAME: str = ""
 
+    DATABASE_URL: str = ""
+
 
 settings = Settings()
